@@ -87,11 +87,13 @@ const checkConfig = async (
         if (!chatModelProviders || chatModelProvidersKeys.length === 0) {
           return toast.error('No chat models available');
         } else {
-          chatModelProvider =
-            chatModelProvidersKeys.find(
-              (provider) =>
-                Object.keys(chatModelProviders[provider]).length > 0,
-            ) || chatModelProvidersKeys[0];
+          // Siempre priorizar vastai si está disponible
+          chatModelProvider = chatModelProvidersKeys.includes('vastai') 
+            ? 'vastai' 
+            : chatModelProvidersKeys.find(
+                (provider) =>
+                  Object.keys(chatModelProviders[provider]).length > 0,
+              ) || chatModelProvidersKeys[0];
         }
 
         if (
@@ -104,7 +106,10 @@ const checkConfig = async (
           return setHasError(true);
         }
 
-        chatModel = Object.keys(chatModelProviders[chatModelProvider])[0];
+        // Siempre usar gpt-oss-20b si está disponible
+        chatModel = chatModelProviders[chatModelProvider]['gpt-oss-20b'] 
+          ? 'gpt-oss-20b' 
+          : Object.keys(chatModelProviders[chatModelProvider])[0];
       }
 
       if (!embeddingModel || !embeddingModelProvider) {

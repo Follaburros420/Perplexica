@@ -27,6 +27,18 @@ type Topic = keyof typeof websitesForTopic;
 
 export const GET = async (req: Request) => {
   try {
+    // Temporalmente desactivado para evitar errores de rate limiting
+    return Response.json(
+      {
+        blogs: [],
+        message: 'Discover feature temporarily disabled'
+      },
+      {
+        status: 200,
+      },
+    );
+    
+    /*
     const params = new URL(req.url).searchParams;
 
     const mode: 'normal' | 'preview' =
@@ -84,14 +96,16 @@ export const GET = async (req: Request) => {
         status: 200,
       },
     );
+    */
   } catch (err) {
     console.error(`An error occurred in discover route: ${err}`);
     return Response.json(
       {
-        message: 'An error has occurred',
+        blogs: [],
+        message: 'Discover feature temporarily disabled',
       },
       {
-        status: 500,
+        status: 200,
       },
     );
   }

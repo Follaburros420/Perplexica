@@ -45,21 +45,23 @@ import {
   loadLMStudioEmbeddingsModels,
   PROVIDER_INFO as LMStudioInfo,
 } from './lmstudio';
+import {
+  loadVastAiChatModels,
+  PROVIDER_INFO as VastAiInfo,
+} from './vastai';
 
 export const PROVIDER_METADATA = {
-  openai: OpenAIInfo,
-  ollama: OllamaInfo,
-  groq: GroqInfo,
-  anthropic: AnthropicInfo,
-  gemini: GeminiInfo,
-  transformers: TransformersInfo,
-  deepseek: DeepseekInfo,
-  aimlapi: AimlApiInfo,
-  lmstudio: LMStudioInfo,
-  custom_openai: {
-    key: 'custom_openai',
-    displayName: 'Custom OpenAI',
-  },
+  vastai: VastAiInfo,
+  // Otros proveedores comentados para simplificar
+  // openai: OpenAIInfo,
+  // ollama: OllamaInfo,
+  // groq: GroqInfo,
+  // anthropic: AnthropicInfo,
+  // gemini: GeminiInfo,
+  // transformers: TransformersInfo,
+  // deepseek: DeepseekInfo,
+  // aimlapi: AimlApiInfo,
+  // lmstudio: LMStudioInfo,
 };
 
 export interface ChatModel {
@@ -76,14 +78,17 @@ export const chatModelProviders: Record<
   string,
   () => Promise<Record<string, ChatModel>>
 > = {
-  openai: loadOpenAIChatModels,
-  ollama: loadOllamaChatModels,
-  groq: loadGroqChatModels,
-  anthropic: loadAnthropicChatModels,
-  gemini: loadGeminiChatModels,
-  deepseek: loadDeepseekChatModels,
-  aimlapi: loadAimlApiChatModels,
-  lmstudio: loadLMStudioChatModels,
+  // Solo tu modelo personalizado
+  vastai: loadVastAiChatModels,
+  // Otros proveedores comentados para simplificar
+  // openai: loadOpenAIChatModels,
+  // ollama: loadOllamaChatModels,
+  // groq: loadGroqChatModels,
+  // anthropic: loadAnthropicChatModels,
+  // gemini: loadGeminiChatModels,
+  // deepseek: loadDeepseekChatModels,
+  // aimlapi: loadAimlApiChatModels,
+  // lmstudio: loadLMStudioChatModels,
 };
 
 export const embeddingModelProviders: Record<
@@ -108,27 +113,7 @@ export const getAvailableChatModelProviders = async () => {
     }
   }
 
-  const customOpenAiApiKey = getCustomOpenaiApiKey();
-  const customOpenAiApiUrl = getCustomOpenaiApiUrl();
-  const customOpenAiModelName = getCustomOpenaiModelName();
-
-  models['custom_openai'] = {
-    ...(customOpenAiApiKey && customOpenAiApiUrl && customOpenAiModelName
-      ? {
-          [customOpenAiModelName]: {
-            displayName: customOpenAiModelName,
-            model: new ChatOpenAI({
-              apiKey: customOpenAiApiKey,
-              modelName: customOpenAiModelName,
-              temperature: 0.7,
-              configuration: {
-                baseURL: customOpenAiApiUrl,
-              },
-            }) as unknown as BaseChatModel,
-          },
-        }
-      : {}),
-  };
+  // Custom OpenAI removido - solo usamos el proveedor vastai
 
   return models;
 };
