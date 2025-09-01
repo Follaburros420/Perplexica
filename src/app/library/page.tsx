@@ -61,14 +61,14 @@ const Page = () => {
       <div className="flex flex-col pt-4">
         <div className="flex items-center">
           <BookOpenText />
-          <h1 className="text-3xl font-medium p-2">Library</h1>
+          <h1 className="text-3xl font-medium p-2">Biblioteca</h1>
         </div>
         <hr className="border-t border-[#2B2C2C] my-4 w-full" />
       </div>
       {chats.length === 0 && (
         <div className="flex flex-row items-center justify-center min-h-screen">
           <p className="text-black/70 dark:text-white/70 text-sm">
-            No chats found.
+            No se encontraron conversaciones.
           </p>
         </div>
       )}

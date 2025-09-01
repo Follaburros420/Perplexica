@@ -21,19 +21,19 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
       icon: Home,
       href: '/',
       active: segments.length === 0 || segments.includes('c'),
-      label: 'Home',
+      label: 'Inicio',
     },
     {
       icon: Search,
       href: '/discover',
       active: segments.includes('discover'),
-      label: 'Discover',
+      label: 'Descubrir',
     },
     {
       icon: BookOpenText,
       href: '/library',
       active: segments.includes('library'),
-      label: 'Library',
+      label: 'Biblioteca',
     },
   ];
 

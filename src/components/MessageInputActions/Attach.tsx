@@ -104,7 +104,7 @@ const Attach = ({
           <div className="bg-light-primary dark:bg-dark-primary border rounded-md border-light-200 dark:border-dark-200 w-full max-h-[200px] md:max-h-none overflow-y-auto flex flex-col">
             <div className="flex flex-row items-center justify-between px-3 py-2">
               <h4 className="text-black dark:text-white font-medium text-sm">
-                Attached files
+                Archivos adjuntos
               </h4>
               <div className="flex flex-row items-center space-x-4">
                 <button
@@ -177,7 +177,7 @@ const Attach = ({
         hidden
       />
       <CopyPlus size={showText ? 18 : undefined} />
-      {showText && <p className="text-xs font-medium pl-[1px]">Attach</p>}
+      {showText && <p className="text-xs font-medium pl-[1px]">Adjuntar</p>}
     </button>
   );
 };

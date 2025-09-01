@@ -11,20 +11,20 @@ import { Fragment } from 'react';
 const OptimizationModes = [
   {
     key: 'speed',
-    title: 'Speed',
-    description: 'Prioritize speed and get the quickest possible answer.',
+    title: 'Velocidad',
+    description: 'Prioriza la velocidad y obtén la respuesta más rápida posible.',
     icon: <Zap size={20} className="text-[#FF9800]" />,
   },
   {
     key: 'balanced',
-    title: 'Balanced',
-    description: 'Find the right balance between speed and accuracy',
+    title: 'Equilibrado',
+    description: 'Encuentra el equilibrio perfecto entre velocidad y precisión',
     icon: <Sliders size={20} className="text-[#4CAF50]" />,
   },
   {
     key: 'quality',
-    title: 'Quality (Soon)',
-    description: 'Get the most thorough and accurate answer',
+    title: 'Calidad (Próximamente)',
+    description: 'Obtén la respuesta más completa y precisa',
     icon: (
       <Star
         size={16}

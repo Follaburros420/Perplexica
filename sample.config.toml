@@ -15,9 +15,9 @@ API_KEY = ""
 API_KEY = ""
 
 [MODELS.CUSTOM_OPENAI]
-API_KEY = ""
-API_URL = ""
-MODEL_NAME = ""
+API_KEY = "dummy-key" # vLLM no requiere API key real, pero el campo no puede estar vacío
+API_URL = "http://host.docker.internal:8000/v1" # URL de tu contenedor vLLM
+MODEL_NAME = "gpt-oss-20b" # Nombre de tu modelo
 
 [MODELS.OLLAMA]
 API_URL = "" # Ollama API URL - http://host.docker.internal:11434

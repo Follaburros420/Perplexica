@@ -15,23 +15,27 @@ interface Discover {
 
 const topics: { key: string; display: string }[] = [
   {
-    display: 'Tech & Science',
+    display: 'Derecho Colombiano',
+    key: 'derecho-colombiano',
+  },
+  {
+    display: 'Tecnología y Ciencia',
     key: 'tech',
   },
   {
-    display: 'Finance',
+    display: 'Finanzas',
     key: 'finance',
   },
   {
-    display: 'Art & Culture',
+    display: 'Arte y Cultura',
     key: 'art',
   },
   {
-    display: 'Sports',
+    display: 'Deportes',
     key: 'sports',
   },
   {
-    display: 'Entertainment',
+    display: 'Entretenimiento',
     key: 'entertainment',
   },
 ];
@@ -62,7 +66,7 @@ const Page = () => {
       setDiscover(data.blogs);
     } catch (err: any) {
       console.error('Error fetching data:', err.message);
-      toast.error('Error fetching data');
+      toast.error('Error al obtener los datos');
     } finally {
       setLoading(false);
     }
@@ -78,7 +82,7 @@ const Page = () => {
         <div className="flex flex-col pt-4">
           <div className="flex items-center">
             <Search />
-            <h1 className="text-3xl font-medium p-2">Discover</h1>
+            <h1 className="text-3xl font-medium p-2">Descubrir</h1>
           </div>
           <hr className="border-t border-[#2B2C2C] my-4 w-full" />
         </div>

@@ -19,38 +19,38 @@ import { Fragment } from 'react';
 const focusModes = [
   {
     key: 'webSearch',
-    title: 'All',
-    description: 'Searches across all of the internet',
+    title: 'General',
+    description: 'Busca en toda la internet',
     icon: <Globe size={20} />,
   },
   {
     key: 'academicSearch',
-    title: 'Academic',
-    description: 'Search in published academic papers',
+    title: 'Académico',
+    description: 'Busca en artículos académicos publicados',
     icon: <SwatchBook size={20} />,
   },
   {
     key: 'writingAssistant',
-    title: 'Writing',
-    description: 'Chat without searching the web',
+    title: 'Redacción',
+    description: 'Chat sin buscar en la web',
     icon: <Pencil size={16} />,
   },
   {
     key: 'wolframAlphaSearch',
     title: 'Wolfram Alpha',
-    description: 'Computational knowledge engine',
+    description: 'Motor de conocimiento computacional',
     icon: <BadgePercent size={20} />,
   },
   {
     key: 'youtubeSearch',
     title: 'Youtube',
-    description: 'Search and watch videos',
+    description: 'Buscar y ver videos',
     icon: <SiYoutube className="h-5 w-auto mr-0.5" />,
   },
   {
     key: 'redditSearch',
     title: 'Reddit',
-    description: 'Search for discussions and opinions',
+    description: 'Buscar discusiones y opiniones',
     icon: <SiReddit className="h-5 w-auto mr-0.5" />,
   },
 ];
@@ -79,7 +79,7 @@ const Focus = ({
         ) : (
           <div className="flex flex-row items-center space-x-1">
             <ScanEye size={20} />
-            <p className="text-xs font-medium hidden lg:block">Focus</p>
+            <p className="text-xs font-medium hidden lg:block">Enfoque</p>
           </div>
         )}
       </PopoverButton>
